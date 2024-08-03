@@ -3,13 +3,20 @@ class JournalsController < ApplicationController
 
   def create
     journal = current_user.journals.create(journal_params)
-    render json: journal
+    if journal.save
+      render json: journal, status: :created
+    else
+      render json: journal.errors, status: :unprocessable_entity
+    end
   end
 
   def update
     journal = current_user.journals.find(params[:id])
-    journal.update(journal_params)
-    render json: journal
+    if journal.update(journal_params)
+      render json: journal
+    else
+      render json: journal.errors, status: :unprocessable_entity
+    end
   end
 
   def destroy

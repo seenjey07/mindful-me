@@ -3,13 +3,20 @@ class MoodsController < ApplicationController
 
   def create
     mood = current_user.moods.create(mood_params)
-    render json: mood
+    if mood.save
+      render json: mood, status: :created
+    else
+      render json: mood.errors, status: :unprocessable_entity
+    end
   end
 
   def update
     mood = current_user.moods.find(params[:id])
-    mood.update(mood_params)
-    render json: mood
+    if mood.update(mood_params)
+      render json: mood
+    else
+      render json: mood.errors, status: :unprocessable_entity
+    end
   end
 
   def destroy
