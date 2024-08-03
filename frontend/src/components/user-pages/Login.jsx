@@ -33,7 +33,9 @@ const Login = () => {
           <div className="text-center lg:text-left">
             <h1 className="text-5xl font-bold text-nowrap mb-2">Login now!</h1>
             <h3 className="hero-title text-lg md:text-xl lg:text-2xl font-semibold mb-2">
-              MindfulMe: Your Daily Reflection
+              <a className="link" href="/">
+                MindfulMe: Your Daily Reflection
+              </a>
             </h3>
             <p className="hero-subtitle text-xs md:text-sm">
               <em>
