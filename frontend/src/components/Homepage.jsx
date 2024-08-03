@@ -14,7 +14,7 @@ const Homepage = () => {
   return (
     <>
       <div>
-        <div className="hero py-6">
+        <div className="hero pt-12 pb-8 w-full">
           <video
             src={currentVideo}
             type="video/mp4"
@@ -23,15 +23,15 @@ const Homepage = () => {
             controls={false}
             autoPlay
             muted
-            className="w-32 h-32 md:w-40 md:h-40 rounded-full"
+            className="w-40 h-40 md:w-52 md:h-52 rounded-full"
           ></video>
         </div>
 
-        <div className="hero-content text-center flex-col gap-0 w-full">
-          <h1 className="text-xl font-semibold">
+        <div className="hero-overlay bg-transparent flex flex-col gap-0 w-full p-2">
+          <h1 className="hero-title text-lg md:text-xl lg:text-2xl font-semibold">
             MindfulMe: Your Daily Reflection
           </h1>
-          <p className="text-sm">
+          <p className="hero-subtitle text-xs md:text-sm">
             <em>
               &quot;Track your moods, journal your thoughts, and nurture your
               mind.&quot;
@@ -40,7 +40,7 @@ const Homepage = () => {
         </div>
       </div>
 
-      <div className="flex justify-center gap-4">
+      <div className="flex justify-center mt-8 gap-4">
         <button className="btn btn-sm px-5 btn-warning">
           <Link to="/login">Login</Link>
         </button>
