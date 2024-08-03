@@ -23,9 +23,14 @@ class MoodsController < ApplicationController
     render json: moods
   end
 
+  def show
+    mood = current_user.moods.find(params[:id])
+    render jason: mood
+  end
+
 
   private
-
+  
   def mood_params
     params.require(:mood).permit(:date, :mood)
   end
