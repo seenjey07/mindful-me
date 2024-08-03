@@ -3,13 +3,13 @@ import axios from "axios";
 import Footer from "../Footer";
 
 const Login = () => {
-  const [loginFormData, setLoginFormData] = useState({
+  const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
 
   const handleChange = (e) => {
-    setLoginFormData({ ...loginFormData, [e.target.name]: e.target.value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
@@ -17,7 +17,7 @@ const Login = () => {
     try {
       const response = await axios.post(
         "http://localhost:3000/users/sign_in",
-        loginFormData
+        formData
       );
 
       console.log(response.data);
@@ -50,7 +50,7 @@ const Login = () => {
                 <label className="label">
                   <span
                     className="label-text text-blue-100"
-                    value={loginFormData.email}
+                    value={formData.email}
                     onChange={handleChange}
                   >
                     Email
@@ -67,7 +67,7 @@ const Login = () => {
                 <label className="label">
                   <span
                     className="label-text text-blue-100"
-                    value={loginFormData.password}
+                    value={formData.password}
                     onChange={handleChange}
                   >
                     Password
