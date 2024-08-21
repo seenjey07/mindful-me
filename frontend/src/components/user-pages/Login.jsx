@@ -28,16 +28,16 @@ const Login = () => {
 
   return (
     <>
-      <div className="hero bg-ghost min-h-screen">
-        <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold text-nowrap mb-2">Login now!</h1>
+      <div className="hero bg-ghost h-[95vh]">
+        <div className="hero-content flex-col md:flex-row-reverse">
+          <div className="text-center md:text-left text-nowrap">
+            <h1 className="text-5xl font-bold mb-2">Login now!</h1>
             <h3 className="hero-title text-lg md:text-xl lg:text-2xl font-semibold mb-2">
               <a className="link" href="/">
                 MindfulMe: Your Daily Reflection
               </a>
             </h3>
-            <p className="hero-subtitle text-xs md:text-sm">
+            <p className="hero-subtitle text-xs md:text-sm text-wrap">
               <em>
                 &quot;Track your moods, journal your thoughts, and nurture your
                 mind.&quot;

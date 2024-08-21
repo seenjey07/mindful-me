@@ -35,11 +35,25 @@ const Registration = () => {
 
   return (
     <>
-      <div className="hero bg-ghost h-screen w-screen">
-        <div className="hero-content">
-          <div className="card bg-base-100 shadow-xl">
-            <form className="card-body max-h-[84vh] overflow-y-auto">
-              <div className="text-center text-stone-300 mb-3">
+      <div className="hero bg-ghost h-[95vh]">
+        <div className="hero-content flex-col md:flex-row-reverse">
+          <div className="text-center md:text-left text-nowrap">
+            <h1 className="text-5xl font-bold mb-2">Register now!</h1>
+            <h3 className="hero-title text-lg md:text-xl lg:text-2xl font-semibold mb-2">
+              <a className="link" href="/">
+                MindfulMe: Your Daily Reflection
+              </a>
+            </h3>
+            <p className="hero-subtitle text-xs md:text-sm text-wrap">
+              <em>
+                &quot;Track your moods, journal your thoughts, and nurture your
+                mind.&quot;
+              </em>
+            </p>
+          </div>
+          <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-xl">
+            <form className="card-body max-h-[69vh] md:max-h-[fit-content] overflow-y-auto">
+              {/* <div className="text-center text-stone-300 mb-3">
                 <h1 className="hero-title text-lg md:text-xl lg:text-2xl font-semibold mb-2 text-white">
                   <a className="link" href="/">
                     MindfulMe: Your Daily Reflection
@@ -54,12 +68,12 @@ const Registration = () => {
                 <h3 className="text-lg font-semibold text-nowrap text-yellow-300">
                   Complete the information below
                 </h3>
-              </div>
+              </div> */}
               <div className="grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-4">
                 <div className="form-control">
                   <label className="label">
                     <span
-                      className="label-text text-orange-100"
+                      className="label-text text-blue-100"
                       value={formData.firstName}
                       onChange={handleChange}
                     >
@@ -76,7 +90,7 @@ const Registration = () => {
                 <div className="form-control">
                   <label className="label">
                     <span
-                      className="label-text text-orange-100"
+                      className="label-text text-blue-100"
                       value={formData.lastName}
                       onChange={handleChange}
                     >
@@ -94,7 +108,7 @@ const Registration = () => {
                 <div className="form-control">
                   <label className="label">
                     <span
-                      className="label-text text-orange-100"
+                      className="label-text text-blue-100"
                       value={formData.birthday}
                       onChange={handleChange}
                     >
@@ -114,7 +128,7 @@ const Registration = () => {
                 <div className="form-control">
                   <label className="label">
                     <span
-                      className="label-text text-orange-100"
+                      className="label-text text-blue-100"
                       value={formData.email}
                       onChange={handleChange}
                     >
@@ -132,7 +146,7 @@ const Registration = () => {
                 <div className="form-control">
                   <label className="label">
                     <span
-                      className="label-text text-orange-100"
+                      className="label-text text-blue-100"
                       value={formData.username}
                       onChange={handleChange}
                     >
@@ -150,7 +164,7 @@ const Registration = () => {
                 <div className="form-control">
                   <label className="label">
                     <span
-                      className="label-text text-orange-100"
+                      className="label-text text-blue-100"
                       value={formData.password}
                       onChange={handleChange}
                     >
@@ -168,7 +182,7 @@ const Registration = () => {
                 <div className="form-control">
                   <label className="label">
                     <span
-                      className="label-text text-orange-100"
+                      className="label-text text-blue-100"
                       value={formData.confirmPassword}
                       onChange={handleChange}
                     >
@@ -231,8 +245,8 @@ const Registration = () => {
             </form>
           </div>
         </div>
-        <Footer />
       </div>
+      <Footer />
     </>
   );
 };
