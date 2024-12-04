@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import Footer from "../Footer";
+import AppVideos from "../AppVideos";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -31,7 +32,7 @@ const Login = () => {
       <div className="hero bg-ghost h-[95vh]">
         <div className="hero-content flex-col md:flex-row-reverse">
           <div className="text-center md:text-left text-nowrap">
-            <h1 className="text-5xl font-bold mb-2">Login now!</h1>
+            <h1 className="text-3xl font-bold mb-2">Login now!</h1>
             <h3 className="hero-title text-lg md:text-xl lg:text-2xl font-semibold mb-2">
               <a className="link" href="/">
                 MindfulMe: Your Daily Reflection
@@ -43,13 +44,14 @@ const Login = () => {
                 mind.&quot;
               </em>
             </p>
+            <AppVideos />
           </div>
-          <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-            <form className="card-body">
+          <div className="card bg-base-100 w-72 shrink-0 shadow-2xl">
+            <form className="card-body p-5">
               <div className="form-control">
                 <label className="label">
                   <span
-                    className="label-text text-blue-100"
+                    className="label-text text-blue-100 text-sm"
                     value={formData.email}
                     onChange={handleChange}
                   >
@@ -59,14 +61,14 @@ const Login = () => {
                 <input
                   type="email"
                   placeholder="Enter email"
-                  className="input input-bordered text-white"
+                  className="input input-bordered text-white text-xs"
                   required
                 />
               </div>
               <div className="form-control">
                 <label className="label">
                   <span
-                    className="label-text text-blue-100"
+                    className="label-text text-blue-100 text-sm"
                     value={formData.password}
                     onChange={handleChange}
                   >
@@ -76,7 +78,7 @@ const Login = () => {
                 <input
                   type="password"
                   placeholder="Enter password"
-                  className="input input-bordered text-white"
+                  className="input input-bordered text-white text-xs"
                   required
                 />
                 <label className="label">
@@ -86,9 +88,9 @@ const Login = () => {
                   {/* to add link for forget pw page */}
                 </label>
               </div>
-              <div className="form-control mt-6">
+              <div className="form-control mt-5">
                 <button
-                  className="btn btn-warning btn-md text-md font-semibold mb-4"
+                  className="btn btn-warning btn-sm text-md font-semibold mb-3"
                   onSubmit={handleSubmit}
                 >
                   Login
@@ -122,7 +124,7 @@ const Login = () => {
                 </div>
               </div>
 
-              <div className="form-control mt-3 items-center">
+              <div className="form-control mt-2 items-center">
                 <label className="label">
                   <a
                     href="/register"

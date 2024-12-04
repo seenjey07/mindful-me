@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import Footer from "../Footer";
+import AppVideos from "../AppVideos";
 
 const Registration = () => {
   const [formData, setFormData] = useState({
@@ -35,24 +35,26 @@ const Registration = () => {
 
   return (
     <>
-      <div className="hero bg-ghost h-[95vh]">
-        <div className="hero-content flex-col md:flex-row-reverse">
+      <div className="hero bg-ghost h-screen flex flex-col">
+        <div className="hero-content flex-grow flex-col md:flex-row-reverse">
           <div className="text-center md:text-left text-nowrap">
-            <h1 className="text-5xl font-bold mb-2">Register now!</h1>
+            <h1 className="text-3xl font-bold mb-2">Register now!</h1>
             <h3 className="hero-title text-lg md:text-xl lg:text-2xl font-semibold mb-2">
               <a className="link" href="/">
                 MindfulMe: Your Daily Reflection
               </a>
             </h3>
+
             <p className="hero-subtitle text-xs md:text-sm text-wrap">
               <em>
                 &quot;Track your moods, journal your thoughts, and nurture your
                 mind.&quot;
               </em>
             </p>
+            <AppVideos />
           </div>
-          <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-xl">
-            <form className="card-body max-h-[69vh] md:max-h-[fit-content] overflow-y-auto">
+          <div className="card bg-base-100 w-96 max-h-[fit-content] shrink-0 shadow-xl flex-grow">
+            <form className="card-body p-5">
               {/* <div className="text-center text-stone-300 mb-3">
                 <h1 className="hero-title text-lg md:text-xl lg:text-2xl font-semibold mb-2 text-white">
                   <a className="link" href="/">
@@ -69,11 +71,11 @@ const Registration = () => {
                   Complete the information below
                 </h3>
               </div> */}
-              <div className="grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-4">
+              <div className="grid grid-cols-2 gap-2">
                 <div className="form-control">
                   <label className="label">
                     <span
-                      className="label-text text-blue-100"
+                      className="label-text text-blue-100 text-sm"
                       value={formData.firstName}
                       onChange={handleChange}
                     >
@@ -83,14 +85,14 @@ const Registration = () => {
                   <input
                     type="text"
                     placeholder="Enter first name"
-                    className="input input-bordered text-white"
+                    className="input input-bordered text-white text-xs"
                     required
                   />
                 </div>
                 <div className="form-control">
                   <label className="label">
                     <span
-                      className="label-text text-blue-100"
+                      className="label-text text-blue-100 text-sm"
                       value={formData.lastName}
                       onChange={handleChange}
                     >
@@ -100,7 +102,7 @@ const Registration = () => {
                   <input
                     type="text"
                     placeholder="Enter last name"
-                    className="input input-bordered text-white"
+                    className="input input-bordered text-white text-xs"
                     required
                   />
                 </div>
@@ -108,7 +110,7 @@ const Registration = () => {
                 <div className="form-control">
                   <label className="label">
                     <span
-                      className="label-text text-blue-100"
+                      className="label-text text-blue-100 text-sm"
                       value={formData.birthday}
                       onChange={handleChange}
                     >
@@ -118,17 +120,15 @@ const Registration = () => {
                   <input
                     type="date"
                     placeholder="Enter birthday"
-                    className="input input-bordered text-white"
+                    className="input input-bordered text-white text-xs"
                     required
                   />
                 </div>
 
-                <br />
-
                 <div className="form-control">
                   <label className="label">
                     <span
-                      className="label-text text-blue-100"
+                      className="label-text text-blue-100 text-sm"
                       value={formData.email}
                       onChange={handleChange}
                     >
@@ -138,15 +138,15 @@ const Registration = () => {
                   <input
                     type="email"
                     placeholder="Enter email address"
-                    className="input input-bordered text-white"
+                    className="input input-bordered text-white text-xs"
                     required
                   />
                 </div>
 
-                <div className="form-control">
+                <div className="form-control center">
                   <label className="label">
                     <span
-                      className="label-text text-blue-100"
+                      className="label-text text-blue-100 text-sm"
                       value={formData.username}
                       onChange={handleChange}
                     >
@@ -156,15 +156,17 @@ const Registration = () => {
                   <input
                     type="text"
                     placeholder="Enter username"
-                    className="input input-bordered text-white"
+                    className="input input-bordered text-white text-xs"
                     required
                   />
                 </div>
 
+                <br />
+
                 <div className="form-control">
                   <label className="label">
                     <span
-                      className="label-text text-blue-100"
+                      className="label-text text-blue-100 text-sm"
                       value={formData.password}
                       onChange={handleChange}
                     >
@@ -174,7 +176,7 @@ const Registration = () => {
                   <input
                     type="password"
                     placeholder="Enter password"
-                    className="input input-bordered text-white"
+                    className="input input-bordered text-white text-xs"
                     required
                   />
                 </div>
@@ -182,7 +184,7 @@ const Registration = () => {
                 <div className="form-control">
                   <label className="label">
                     <span
-                      className="label-text text-blue-100"
+                      className="label-text text-blue-100 text-sm"
                       value={formData.confirmPassword}
                       onChange={handleChange}
                     >
@@ -192,16 +194,16 @@ const Registration = () => {
                   <input
                     type="password"
                     placeholder="Confirm password"
-                    className="input input-bordered text-white"
+                    className="input input-bordered text-white text-xs"
                     required
                   />
                 </div>
               </div>
 
-              <div className="form-control mt-6">
+              <div className="form-control mt-5">
                 <button
-                  className="btn btn-warning btn-md text-md font-semibold mb-4"
-                  onSubmit={handleSubmit}
+                  className="btn btn-warning btn-sm text-sm font-semibold mb-2.5"
+                  onClick={handleSubmit}
                 >
                   Register
                 </button>
@@ -234,7 +236,7 @@ const Registration = () => {
                 </div>
               </div>
 
-              <div className="form-control mt-3 items-center">
+              <div className="form-control mt-2 items-center">
                 <label className="label">
                   <a href="/login" className="label-text-alt link link-hover">
                     Already have an account?{" "}
@@ -246,7 +248,6 @@ const Registration = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };
