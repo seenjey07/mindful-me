@@ -5,16 +5,18 @@ import Registration from "./user-pages/Registration";
 import Dashboard from "./user-pages/Dashboard";
 import MoodTracker from "./user-pages/MoodTracker";
 import DailyJournal from "./user-pages/DailyJournal";
+import NotFound from "./NotFound";
 
 const MindfulMeRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<Homepage />} />
+      <Route exact path="/" element={<Homepage />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Registration />} />
       <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/mood-tsracker" element={<MoodTracker />} />
+      <Route path="/mood-tracker" element={<MoodTracker />} />
       <Route path="/daily-journal" element={<DailyJournal />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };
